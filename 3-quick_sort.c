@@ -20,26 +20,19 @@ temp = *x;
 */
 int partition(int *array, int lb, int ub, size_t size)
 {
-int pivot = array[ub];
-int i = lb - 1;
-int j;
+int pivot = array[ub], i = lb - 1, j;
 
 for (j = lb; j < ub; j++)
 {
 if (array[j] < pivot)
-{
-i++;
+{i++;
 if (array[i] != array[j])
-{
-swap(&array[i], &array[j]);
+{swap(&array[i], &array[j]);
 print_array(array, size);
 }}}
-
 if (array[i + 1] != array[ub])
-{
-swap(&array[i + 1], &array[ub]);
-print_array(array, size);
-}
+{swap(&array[i + 1], &array[ub]);
+print_array(array, size); }
 return (i + 1);
 }
 /**
